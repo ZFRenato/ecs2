@@ -13,7 +13,16 @@ app.get('/', (req, res) => {
   });
 });
 
-app.post('/email', (req, res) => {
+app.get('/teste', (req, res) => {
+  res.status(200).send({
+    success: 'true',
+    message: 'healthy teste3 EMAIL', 
+    version: '1.0.0',
+  });
+});
+
+
+app.post('/teste/email', (req, res) => {
   const { email, senha } = req.body
   if (!email || !senha) {
     res.status(400)
